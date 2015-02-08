@@ -67,3 +67,14 @@ def sim_pearson(prefs,p1,p2):
 
 	return r
 
+
+# Возвращает список наилучших соответствий для человека из словаря prefs
+# Количество результатов в списке и функция подобия - необязательные параметры.
+
+def topMatches(prefs, person, n=5, similarity=sim_pearson):
+	scores=[(similarity(prefs,person,other), other) for other in prefs if other!=person]
+	
+	# Отсортировать список по убыванию оценок
+	scores.sort()
+	scores.reverse()
+	return scores[0:n]
