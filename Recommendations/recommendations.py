@@ -59,7 +59,7 @@ def sim_pearson(prefs,p1,p2):
 
 	# Вычислить коэффициент Пирсона
 	num=pSum-(sum1*sum2/n)
-	den=sqrt((sum1S1-pow(sum1,2)/n)*(sum2Sq-pow(sum2,2)/n))
+	den=sqrt((sum1Sq-pow(sum1,2)/n)*(sum2Sq-pow(sum2,2)/n))
 
 	if den==0: return 0
 
